@@ -333,35 +333,34 @@ placeholder="📝 Request lainnya..."></textarea>
 <button type="button" onclick="kirim()">
 📲 Kirim ke WhatsApp
 </button>
-<script>
-function kirim() {
-  let nama = document.getElementById("nama").value;
-  let judul = document.getElementById("judul").value;
-  let jumlah = document.getElementById("jumlah").value;
-  let genre = document.getElementById("genre").value;
-  let genrelain = document.getElementById("genrelain").value;
-  let bayar = document.getElementById("bayar").value;
-  let deadline = document.getElementById("deadline").value;
-  let request = document.getElementById("request").value;
+  <script>
+    function kirim() {
+      let nama = document.getElementById("nama").value;
+      let judul = document.getElementById("judul").value;
+      let jumlah = document.getElementById("jumlah").value;
+      let genre = document.getElementById("genre").value;
+      let genrelain = document.getElementById("genrelain").value;
+      let bayar = document.getElementById("bayar").value;
+      let deadline = document.getElementById("deadline").value;
+      let request = document.getElementById("request").value;
 
-  let nomor = "62881027675829";
+      let nomor = "62881027675829";
 
-  let pesan =
-`🔥 ORDER DJ MAZZDA 🔥
+      let pesan =
+"🔥 ORDER DJ MAZZDA 🔥\n\n" +
+"Nama: " + nama + "\n" +
+"Judul: " + judul + "\n" +
+"Jumlah: " + jumlah + "\n" +
+"Genre: " + genre + " " + genrelain + "\n" +
+"Pembayaran: " + bayar + "\n" +
+"Deadline: " + deadline + "\n\n" +
+"Request:\n" + request;
 
-Nama: ${nama}
-Judul Lagu: ${judul}
-Jumlah: ${jumlah}
-Genre: ${genre} ${genrelain}
-Pembayaran: ${bayar}
-Deadline: ${deadline}
+      let url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
 
-Request:
-${request}`;
+      window.open(url, "_blank");
+    }
+  </script>
 
-  let url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
-
-  window.open(url, "_blank");
-}
-</script>
+</body>
 </div>

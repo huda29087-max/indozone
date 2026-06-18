@@ -330,10 +330,38 @@ id="request"
 rows="5"
 placeholder="📝 Request lainnya..."></textarea>
 
-<button onclick="kirim()">
-
-📲 Kirim Pesanan ke WhatsApp
-
+<button type="button" onclick="kirim()">
+📲 Kirim ke WhatsApp
 </button>
+<script>
+function kirim() {
+  let nama = document.getElementById("nama").value;
+  let judul = document.getElementById("judul").value;
+  let jumlah = document.getElementById("jumlah").value;
+  let genre = document.getElementById("genre").value;
+  let genrelain = document.getElementById("genrelain").value;
+  let bayar = document.getElementById("bayar").value;
+  let deadline = document.getElementById("deadline").value;
+  let request = document.getElementById("request").value;
 
+  let nomor = "62881027675829";
+
+  let pesan =
+`🔥 ORDER DJ MAZZDA 🔥
+
+Nama: ${nama}
+Judul Lagu: ${judul}
+Jumlah: ${jumlah}
+Genre: ${genre} ${genrelain}
+Pembayaran: ${bayar}
+Deadline: ${deadline}
+
+Request:
+${request}`;
+
+  let url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+
+  window.open(url, "_blank");
+}
+</script>
 </div>
